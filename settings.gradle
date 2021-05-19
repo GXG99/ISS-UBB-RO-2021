@@ -1,0 +1,6 @@
+rootProject.name = 'Pharmacy'
+include 'PharmacyModel'
+include 'PharmacyClientFX'
+include 'PharmacyPersistence'
+include 'PharmacyServices'
+

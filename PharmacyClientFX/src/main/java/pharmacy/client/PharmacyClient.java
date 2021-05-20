@@ -6,10 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import pharmacy.client.gui.LoginController;
+import pharmacy.services.IPharmacyServices;
 
 import java.io.IOException;
 
-public class ClientRunner extends Application {
+public class PharmacyClient extends Application {
 
     // Dragging variables
     private double xOffset = 0;
@@ -17,8 +21,10 @@ public class ClientRunner extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        IPharmacyServices server = getServer();
         // Initialize
-        Scene loginScene = initializeLoginView(primaryStage);
+        Scene loginScene = initializeLoginView(primaryStage, server);
 
         // Primary Stage initializers
         primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -26,10 +32,20 @@ public class ClientRunner extends Application {
         primaryStage.show();
     }
 
-    private Scene initializeLoginView(Stage primaryStage) throws IOException {
+    private IPharmacyServices getServer() {
+        ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:spring-client.xml");
+        return (IPharmacyServices) factory.getBean("pharmacyService");
+    }
+
+
+    private Scene initializeLoginView(Stage primaryStage, IPharmacyServices server) throws IOException {
         // Load FXML
         FXMLLoader loginLoader = getLoginLoader();
         Parent loginRoot = loginLoader.load();
+
+        // Get login controller
+        LoginController loginController = loginLoader.getController();
+        loginController.setServer(server);
 
         // Function to make UNDECORATED stage draggable
         makeDraggable(primaryStage, loginRoot);

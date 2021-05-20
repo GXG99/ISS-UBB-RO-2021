@@ -1,10 +1,11 @@
 package pharmacy.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "doctors", schema = "public")
-public class Doctor implements Identifiable<Long> {
+public class Doctor implements Identifiable<Long>, Serializable {
 
     @Id
     @Column(name = "id_doctor")
@@ -80,5 +81,9 @@ public class Doctor implements Identifiable<Long> {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    public String getDoctorFullName() {
+        return String.format("%s %s", firstName, lastName);
     }
 }

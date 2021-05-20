@@ -1,4 +1,4 @@
-package runner;
+package pharmacy.rmi.server;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -3,4 +3,5 @@ include 'PharmacyModel'
 include 'PharmacyClientFX'
 include 'PharmacyPersistence'
 include 'PharmacyServices'
+include 'PharmacyServer'
 

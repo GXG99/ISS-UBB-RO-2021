@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    compile project (':PharmacyModel')
+    compile project(':PharmacyModel')
     compile project(':PharmacyServices')
     compile project(':PharmacyPersistence')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
@@ -19,6 +19,12 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.4.5'
     implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.4.5', ext: 'pom'
+
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.0'
+
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
 }
 
 test {

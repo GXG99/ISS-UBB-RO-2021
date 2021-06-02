@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="pharmacyService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
-        <property name="serviceUrl" value="rmi://192.168.100.2:1099/IPharmacyServices"/>
+        <property name="serviceUrl" value="rmi://192.168.1.213:1099/IPharmacyServices"/>
         <property name="serviceInterface" value="pharmacy.services.IPharmacyServices"/>
     </bean>
 </beans>

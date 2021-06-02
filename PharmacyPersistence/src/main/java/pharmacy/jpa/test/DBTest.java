@@ -1,4 +1,4 @@
-package pharmacy.rmi.server;
+package pharmacy.jpa.test;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

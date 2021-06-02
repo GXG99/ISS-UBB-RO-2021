@@ -14,6 +14,7 @@ import javafx.stage.StageStyle;
 import pharmacy.model.Doctor;
 import pharmacy.model.Pharmacist;
 import pharmacy.model.User;
+import pharmacy.services.IPharmacyObserver;
 import pharmacy.services.IPharmacyServices;
 import pharmacy.services.PharmacyException;
 
@@ -23,6 +24,8 @@ public class LoginController {
 
     private IPharmacyServices server;
 
+    private DoctorController doctorController;
+    private Parent doctorParent;
 
     // Stage
     private double yOffset = 0;
@@ -107,7 +110,8 @@ public class LoginController {
         try {
 
             System.out.printf("Email: %s | Password: %s%n", email, password);
-            Doctor doctor = server.loginDoctor(email, password);
+            loadDoctor();
+            Doctor doctor = server.loginDoctor(email, password, doctorController);
             if (doctor != null) {
                 Stage doctorStage = loadDoctorView(doctor);
                 doctorStage.show();
@@ -119,17 +123,21 @@ public class LoginController {
     }
 
     private Stage loadDoctorView(Doctor doctor) throws IOException {
-        FXMLLoader doctorLoader =
-                new FXMLLoader(getClass().getClassLoader().getResource("fxml/DoctorView.fxml"));
-        Parent doctorParent = doctorLoader.load();
-        DoctorController doctorController = doctorLoader.getController();
         doctorController.setDoctor(doctor);
+        doctorController.setServer(this.server);
         doctorController.init();
         Stage doctorStage = new Stage();
         doctorStage.setScene(new Scene(doctorParent));
         makeDraggable(doctorStage, doctorParent);
         doctorStage.initStyle(StageStyle.UNDECORATED);
         return doctorStage;
+    }
+
+    private void loadDoctor() throws IOException {
+        FXMLLoader doctorLoader =
+                new FXMLLoader(getClass().getClassLoader().getResource("fxml/DoctorView.fxml"));
+        this.doctorParent = doctorLoader.load();
+        this.doctorController = doctorLoader.getController();
     }
 
     public void setServer(IPharmacyServices server) {

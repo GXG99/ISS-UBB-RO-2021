@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<AnchorPane prefHeight="700.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pharmacy.client.gui.PharmacistController">
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="700.0" prefWidth="1400.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pharmacy.client.gui.PharmacistController">
     <children>
         <VBox prefHeight="700.0" prefWidth="267.0" style="-fx-background-color: #00A896;">
             <children>
@@ -20,52 +19,58 @@
                     <children>
                         <Label prefHeight="67.0" prefWidth="173.0" text="PHARMACY" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="30.0" />
+                                <Font name="System Bold" size="30.0"/>
                             </font>
                         </Label>
                         <ImageView fitHeight="58.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../images/kisspng-caduceus-as-a-symbol-of-medicine-staff-of-hermes-c-pictures-of-medical-symbols-5a7728d9f24e64.1331697715177586819925.png" />
+                                <Image url="@../images/kisspng-caduceus-as-a-symbol-of-medicine-staff-of-hermes-c-pictures-of-medical-symbols-5a7728d9f24e64.1331697715177586819925.png"/>
                             </image>
                             <effect>
-                                <ColorAdjust brightness="1.0" contrast="0.1" hue="-0.19" saturation="1.0" />
+                                <ColorAdjust brightness="1.0" contrast="0.1" hue="-0.19" saturation="1.0"/>
                             </effect>
                         </ImageView>
                     </children>
                 </HBox>
-                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pharmacist" textAlignment="CENTER" wrappingWidth="267.0">
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pharmacist" textAlignment="CENTER"
+                      wrappingWidth="267.0">
                     <font>
-                        <Font name="System Bold" size="25.0" />
+                        <Font name="System Bold" size="25.0"/>
                     </font>
                 </Text>
-                <Label fx:id="loggedPharmacistLabel" alignment="CENTER" prefHeight="62.0" prefWidth="267.0" text="USERNAME LABEL" textFill="#022b3b">
+                <Label fx:id="loggedPharmacistLabel" alignment="CENTER" prefHeight="62.0" prefWidth="267.0"
+                       text="USERNAME LABEL" textFill="#022b3b">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="System Bold" size="20.0"/>
                     </font>
                 </Label>
-                <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../css/main.css" text="ORDERS" textFill="#fbfcee">
+                <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../css/main.css"
+                        text="ORDERS" textFill="#fbfcee">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="System Bold" size="20.0"/>
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../css/main.css" text="STOCKS" textFill="#fbfcee">
+                <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../css/main.css"
+                        text="STOCKS" textFill="#fbfcee">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="System Bold" size="20.0"/>
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../css/main.css" text="DRUGS" textFill="#fbfcee">
+                <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../css/main.css"
+                        text="DRUGS" textFill="#fbfcee">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="System Bold" size="20.0"/>
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onMouseClicked="#exitClicked" prefHeight="229.0" prefWidth="267.0" stylesheets="@../css/main.css" text="EXIT" textFill="#fbfcee">
+                <Button mnemonicParsing="false" onMouseClicked="#exitClicked" prefHeight="229.0" prefWidth="267.0"
+                        stylesheets="@../css/main.css" text="EXIT" textFill="#fbfcee">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="System Bold" size="20.0"/>
                     </font>
                 </Button>
             </children>
             <padding>
-                <Insets top="50.0" />
+                <Insets top="50.0"/>
             </padding>
         </VBox>
     </children>

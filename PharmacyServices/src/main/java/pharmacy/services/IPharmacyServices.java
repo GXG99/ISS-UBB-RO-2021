@@ -1,9 +1,6 @@
 package pharmacy.services;
 
-import pharmacy.model.Doctor;
-import pharmacy.model.Medication;
-import pharmacy.model.Pharmacist;
-import pharmacy.model.User;
+import pharmacy.model.*;
 
 import java.util.List;
 
@@ -25,4 +22,22 @@ public interface IPharmacyServices {
     List<Medication> getAllMedications();
 
     Long getStocksById(Long id);
+
+    void addOrder(Order order);
+
+    List<Order> getAllOrders();
+
+    Doctor getDoctorById(Long doctorId);
+
+    void finalizeOrder(Order toFinalize);
+
+    void saveSpecialtyMedication(SpecialtyMedication medication);
+
+    Medication findMedicationById(Long id);
+
+    SpecialtyMedication getSpecialtyMedicationById(Long id);
+
+    List<SpecialtyMedication> getAllStocks();
+
+    void cancerOrder(Order order);
 }

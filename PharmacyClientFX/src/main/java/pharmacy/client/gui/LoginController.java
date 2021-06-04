@@ -39,6 +39,11 @@ public class LoginController {
     }
 
 
+    /*
+     *
+     *  PHARMACIST LOGIN HANDLE
+     *
+     */
     public void pharmacistLoginClick(MouseEvent mouseEvent) {
         System.out.println("Initializing pharmacist login sequence...");
         String email = emailPhTextField.getText();
@@ -62,6 +67,7 @@ public class LoginController {
         Parent pharmacistParent = pharmacistLoader.load();
         PharmacistController pharmacistController = pharmacistLoader.getController();
         pharmacistController.setPharmacist(pharmacist);
+        pharmacistController.setServer(this.server);
         pharmacistController.init();
         Stage pharmacistStage = new Stage();
         pharmacistStage.setScene(new Scene(pharmacistParent));
@@ -70,6 +76,12 @@ public class LoginController {
         return pharmacistStage;
     }
 
+
+    /*
+     *
+     *  USER LOGIN HANDLE
+     *
+     */
     public void userLoginClick(MouseEvent mouseEvent) {
 
         System.out.println("Initializing user login sequence...");
@@ -103,6 +115,11 @@ public class LoginController {
         return userStage;
     }
 
+    /*
+     *
+     *  DOCTOR LOGIN HANDLE
+     *
+     */
     public void doctorLoginClick(MouseEvent mouseEvent) {
         System.out.println("Initializing doctor login sequence...");
         String email = emailDoctorTextField.getText();
@@ -118,7 +135,9 @@ public class LoginController {
                 ((Node) mouseEvent.getSource()).getScene().getWindow().hide();
             }
         } catch (PharmacyException | IOException e) {
-            e.printStackTrace();
+            if(e.getMessage().equals("Authentication failed")) {
+                System.out.println("Credentials are not correct");
+            }
         }
     }
 
@@ -142,6 +161,7 @@ public class LoginController {
 
     public void setServer(IPharmacyServices server) {
         this.server = server;
+        System.out.println(server.getSpecialtyMedicationById(5061L));
     }
 
     private void makeDraggable(Stage stage, Parent root) {

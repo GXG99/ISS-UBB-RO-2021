@@ -4,13 +4,15 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "medications", schema = "public")
-public class Medication implements Identifiable<Long>, Serializable {
+@Table(name = "specialtymeds", schema = "public")
+public class SpecialtyMedication implements Identifiable<Long>, Serializable {
 
     @Id
-    @Column(name = "id_med")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "id_med")
+    private Long medId;
     @Column(name = "commercial_name")
     private String commercialName;
     @Column(name = "concentration")
@@ -23,10 +25,11 @@ public class Medication implements Identifiable<Long>, Serializable {
     private String shelfLife;
     @Column(name = "stocks")
     private Long stocks;
+    @Column(name = "doctor_id")
+    private Long doctorId;
 
-
-
-    public Medication(String commercialName, String concentration, String therapeuticEffect, String prescription, String shelfLife) {
+    public SpecialtyMedication(Long medId, String commercialName, String concentration, String therapeuticEffect, String prescription, String shelfLife) {
+        this.medId = medId;
         this.commercialName = commercialName;
         this.concentration = concentration;
         this.therapeuticEffect = therapeuticEffect;
@@ -34,11 +37,19 @@ public class Medication implements Identifiable<Long>, Serializable {
         this.shelfLife = shelfLife;
     }
 
-    public Medication() {
+    public SpecialtyMedication() {
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getMedId() {
+        return medId;
+    }
+
+    public void setMedId(Long medId) {
+        this.medId = medId;
     }
 
     public String getCommercialName() {
@@ -89,6 +100,14 @@ public class Medication implements Identifiable<Long>, Serializable {
         this.stocks = stocks;
     }
 
+    public Long getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(Long doctorId) {
+        this.doctorId = doctorId;
+    }
+
     @Override
     public void setID(Long id) {
         this.id = id;
@@ -96,18 +115,21 @@ public class Medication implements Identifiable<Long>, Serializable {
 
     @Override
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     @Override
     public String toString() {
-        return "Medication{" +
+        return "SpecialtyMedication{" +
                 "id=" + id +
+                ", medId=" + medId +
                 ", commercialName='" + commercialName + '\'' +
                 ", concentration='" + concentration + '\'' +
-                ", therapeutic_effect='" + therapeuticEffect + '\'' +
+                ", therapeuticEffect='" + therapeuticEffect + '\'' +
                 ", prescription='" + prescription + '\'' +
-                ", shelf_life='" + shelfLife + '\'' +
+                ", shelfLife='" + shelfLife + '\'' +
+                ", stocks=" + stocks +
+                ", doctorId=" + doctorId +
                 '}';
     }
 }

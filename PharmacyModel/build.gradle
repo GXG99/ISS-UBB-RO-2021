@@ -15,6 +15,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter:2.4.5'
     implementation 'org.springframework.boot:spring-boot-starter-web:2.4.5'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.4.5'
+    compile "com.vladmihalcea:hibernate-types-52:2.11.1"
 }
 
 test {

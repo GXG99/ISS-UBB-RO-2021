@@ -20,7 +20,7 @@
             fx:controller="pharmacy.client.gui.LoginController">
     <HBox alignment="TOP_CENTER" prefHeight="277.0" prefWidth="1400.0" spacing="10.0"
           style="-fx-background-color: #00A896;">
-        <Label text="PHARMACY" textFill="WHITE">
+        <Label text="FARMACIE" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="80.0"/>
             </font>
@@ -34,14 +34,14 @@
             </effect>
         </ImageView>
         <padding>
-            <Insets top="75.0"/>
+            <Insets left="20.0" top="75.0"/>
         </padding>
     </HBox>
     <StackPane layoutY="397.0">
         <children>
             <Pane fx:id="pnUser" prefHeight="210.0" prefWidth="1400.0" style="-fx-background-color: white;">
                 <VBox alignment="TOP_CENTER" layoutX="450.0" prefHeight="200.0" prefWidth="500.0" spacing="10.0">
-                    <Label text="User Login">
+                    <Label text="Autentificare utilizator">
                         <font>
                             <Font name="System Bold" size="25.0"/>
                         </font>
@@ -83,7 +83,7 @@
                 <children>
                     <VBox alignment="TOP_CENTER" layoutX="450.0" prefHeight="200.0" prefWidth="500.0" spacing="10.0">
                         <children>
-                            <Label text="Pharmacist login">
+                            <Label text="Autentificare Farmacist">
                                 <font>
                                     <Font name="System Bold" size="25.0"/>
                                 </font>
@@ -136,7 +136,7 @@
                 <children>
                     <VBox alignment="TOP_CENTER" layoutX="450.0" prefHeight="200.0" prefWidth="500.0" spacing="10.0">
                         <children>
-                            <Label text="Doctor login">
+                            <Label text="Autentificare doctor">
                                 <font>
                                     <Font name="System Bold" size="25.0"/>
                                 </font>
@@ -154,7 +154,7 @@
                             <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="423.0">
                                 <children>
                                     <Label alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="150.0"
-                                           text="Password:  ">
+                                           text="Parola:  ">
                                         <font>
                                             <Font name="System Bold" size="15.0"/>
                                         </font>
@@ -166,15 +166,15 @@
                                 <children>
                                     <JFXButton fx:id="doctorLoginButton" buttonType="RAISED"
                                                onMouseClicked="#doctorLoginClick" prefHeight="44.0" prefWidth="250.0"
-                                               ripplerFill="BLACK" style="-fx-background-color: #05668d;" text="Login"
-                                               textFill="WHITE">
+                                               ripplerFill="BLACK" style="-fx-background-color: #05668d;"
+                                               text="Continua" textFill="WHITE">
                                         <font>
                                             <Font name="System Bold" size="15.0"/>
                                         </font>
                                     </JFXButton>
                                     <JFXButton fx:id="doctorRegisterButton" buttonType="RAISED" prefHeight="44.0"
-                                               prefWidth="250.0" style="-fx-background-color: #05668d;" text="Register"
-                                               textFill="WHITE">
+                                               prefWidth="250.0" style="-fx-background-color: #05668d;"
+                                               text="Inregistrare" textFill="WHITE">
                                         <font>
                                             <Font name="System Bold" size="15.0"/>
                                         </font>
@@ -189,20 +189,20 @@
     </StackPane>
     <HBox alignment="CENTER" layoutY="666.0" prefHeight="95.0" prefWidth="1400.0" spacing="26.0">
         <JFXButton fx:id="phLoginViewButton" buttonType="RAISED" onMouseClicked="#handleViewChange" prefHeight="30.0"
-                   prefWidth="226.0" style="-fx-background-color: #05668d;" text="Pharmacist login" textFill="WHITE">
+                   prefWidth="226.0" style="-fx-background-color: #05668d;" text="Farmacist" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="15.0"/>
             </font>
         </JFXButton>
         <JFXButton fx:id="doctorLoginViewButton" buttonType="RAISED" onMouseClicked="#handleViewChange"
-                   prefHeight="30.0" prefWidth="226.0" style="-fx-background-color: #05668d;" text="Doctor login"
+                   prefHeight="30.0" prefWidth="226.0" style="-fx-background-color: #05668d;" text="Doctor"
                    textFill="WHITE">
             <font>
                 <Font name="System Bold" size="15.0"/>
             </font>
         </JFXButton>
         <JFXButton fx:id="userLoginViewButton" buttonType="RAISED" onMouseClicked="#handleViewChange" prefHeight="30.0"
-                   prefWidth="226.0" style="-fx-background-color: #05668d;" text="User login" textFill="WHITE">
+                   prefWidth="226.0" style="-fx-background-color: #05668d;" text="Utilizator" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="15.0"/>
             </font>

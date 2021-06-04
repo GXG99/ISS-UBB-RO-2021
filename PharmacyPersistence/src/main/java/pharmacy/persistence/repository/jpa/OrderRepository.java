@@ -2,9 +2,8 @@ package pharmacy.persistence.repository.jpa;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import pharmacy.model.User;
+import pharmacy.model.Order;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long> {
-    User findByEmailAndPassword(String email, String password);
+public interface OrderRepository extends CrudRepository<Order, Long> {
 }

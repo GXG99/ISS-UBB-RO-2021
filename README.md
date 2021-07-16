@@ -3,4 +3,9 @@
 <h4>Working features</h4>
 -Data persistence: PostgreSQL and SpringJPA <br>
 -Login as doctor/pharmacist/user <br>
--Medicine database from <a href="https://www.anm.ro/nomenclator/medicamente">ANM</a>
+-Medicine database from <a href="https://www.anm.ro/nomenclator/medicamente">ANM</a> <br>
+-Search bar <br>
+-Order medications, cancel orders, approve or fulfil order <br>
+
+
+Code in application branch
